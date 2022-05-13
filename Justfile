@@ -4,12 +4,6 @@ clone:
 build:
   earthly +build
 
-bash:
-  docker run --rm -it pglab bash
-
 start: build
   mkdir -p data
   docker run --rm -v $PWD/data:/var/lib/postgres -it pglab
-
-psql:
-  docker run --rm -v $PWD/data:/var/lib/postgres
