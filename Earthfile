@@ -12,8 +12,6 @@ build:
   RUN make -j$(nproc)
   RUN make install
   RUN mkdir -p /etc/postgresql/11/main
-  RUN cp /usr/src/postgresql/src/backend/utils/misc/postgresql.conf.sample /etc/postgresql/11/main/postgresql.conf
-  RUN cp /usr/src/postgresql/src/backend/libpq/pg_hba.conf.sample /etc/postgresql/11/main/pg_hba.conf
   RUN useradd -s /usr/bin/bash -d /var/lib/postgres -m postgres
   RUN mkdir -p /var/lib/postgres
   RUN chown postgres /var/lib/postgres
